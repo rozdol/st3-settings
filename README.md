@@ -13,7 +13,7 @@
 
 - Clone the project in temporaty folder `git clone git@github.com:rozdol/st3-settings.git ~/git_tmp/`
 
-- Move files to config `mv ~/git_tmp/{.,}* /Users/nataly/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/`
+- Move files to config `mv ~/git_tmp/{.,}* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/`
 
 - remove tmp folder `rm -d ~/git_tmp`
 
