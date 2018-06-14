@@ -1,33 +1,46 @@
 {
-    // Which file types (file extensions), do you want the plugin to
-    // execute for
-    "extensions_to_execute": ["php", "ctp", "js"],
 
+    "show_debug": false,
+    // Paths
     "phpcs_executable_path": "/usr/local/bin/phpcs",
     "phpcbf_executable_path": "/usr/local/bin/phpcbf",
     "php_cs_fixer_executable_path": "/usr/local/bin/php-cs-fixer",
-
-    // Execute the sniffer on file save
-    "phpcs_execute_on_save": false,
-
-    // Execute phpmd
-    "phpmd_run": true,
-
-    // Execute the phpmd on file save
-    "phpmd_command_on_save": false,
-
-    // It seems python/sublime cannot always find the phpmd application
-    // If empty, then use PATH version of phpmd, else use the set value
     "phpmd_executable_path": "",
 
-    // Additional arguments you can specify into the application
-    //
-    // Example:
-    // {
-    //     "codesize,unusedcode"
-    // }
+    "extensions_to_execute": ["php", "inc", "include", "module", "install"],
+    "extensions_to_blacklist": [],
+
+    //Run
+    "phpcs_sniffer_run": true,
+    "phpcs_linter_run": true,
+    "phpmd_run": false,
+
+    // On save
+    "phpcs_execute_on_save": false,
+    "phpcs_show_errors_on_save": false,
+    "phpcs_command_on_save": false,
+    "phpmd_command_on_save": false,
+    "php_cs_fixer_on_save": false,
+    "phpcs_linter_command_on_save": false,
+
+
+    "phpcs_show_gutter_marks": true,
+    "phpcs_outline_for_errors": true,
+    "phpcs_show_errors_in_status": true,
+    "phpcs_show_quick_panel": true,
+    "php_cs_fixer_show_quick_panel": false,
+
+
+
+    // What is the regex for the linter? Has to provide a named match for 'message' and 'line'
+    "phpcs_linter_regex": "(?P<message>.*) on line (?P<line>\\d+)",
     "phpmd_additional_args": {
         "cleancode,codesize,controversial,design,naming,unusedcode": ""
+    },
+
+    "phpcs_additional_args": {
+        "--standard": "PRS2",
+        "-n": ""
     },
 
     // Additional arguments you can specify into the application
