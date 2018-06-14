@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\$out.=\$this->project->${1:get_partner_info}(\$${2:id},\$${3:date});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pr.</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

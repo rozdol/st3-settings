@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\$out.=\$this->html->form_${1:text}('${2:name}',\$res[${3:name}],'${4:Name}','',0,'span12');
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>form.</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

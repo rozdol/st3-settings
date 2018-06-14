@@ -1,0 +1,47 @@
+<snippet>
+	<content><![CDATA[
+<?php 
+\$tmp=\$this->html->readRQcsv('ids');
+if (\$tmp!=''){\$sql.=" and id in (\$tmp)";}
+
+\$sql="SELECT * FROM lists WHERE id>0 \$sql";
+\$fields=array('#','id','name');
+//\$sort= array('id','name');
+
+\$csv_row=['id','name'];
+\$csv_arr[]=implode("\t",\$csv_row);
+
+\$out=\$this->html->tag(\$what,'foldered');
+\$out.=\$this->html->tablehead(\$what,\$qry, \$order, \$addbutton, \$fields,'autosort');
+if (!(\$cur = pg_query(\$sql))) {\$this->html->SQL_error(\$sql);}	
+\$rows=pg_num_rows(\$cur);\$start_time=\$this->funcs->get_microtime();
+//if(\$rows>0)\$csv=\$this->data->csv(\$sql);
+while (\$row = pg_fetch_array(\$cur,NULL,PGSQL_ASSOC)){
+	\$i++;
+	\$this->progress(\$start_time, \$rows, \$i, "\$what \$i / \$rows");
+	\$name=\$this->data->detalize('lists',\$row[id]);
+
+	\$out.= "<tr>";
+	\$out.= "<td>\$i</td><td><span onClick=\"this.className='blackout';basket_additem('\$what:\$row[id]')\">\$row[id]</span></td>"; 
+	\$out.= "<td onMouseover=\"showhint('\$row[descr]', this, event, '400px');\">\$row[name]</td>";
+	//\$out.= "<td>\$name</td>";
+	//\$out.= "<td>\$row[id]</td>";
+	//\$out.=\$this->html->HT_editicons(\$what, \$row[id]);
+	\$out.= "</tr>";
+
+	//\$totals[1]+=\$row[id];
+
+	\$csv_row=[\$i,\$row[id],\$row[name]];
+	\$csv_arr[]=implode("\t",\$csv_row);
+
+	if (\$allids) \$allids.=','.\$what.':'.\$row[id]; else \$allids.=\$what.':'.\$row[id];
+}
+\$csv=implode("\n",\$csv_arr);
+\$this->livestatus('');
+include(FW_DIR.'/helpers/end_table.php');
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>report.</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

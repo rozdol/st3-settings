@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+\$sql="SELECT * FROM lists WHERE id>0";
+if (!(\$cur = pg_query(\$sql))) {\$this->html->SQL_error(\$sql);}	
+\$rows=pg_num_rows(\$cur);\$start_time=\$this->funcs->get_microtime();
+while (\$row = pg_fetch_array(\$cur,NULL,PGSQL_ASSOC)){
+	\$i++;
+	\$this->progress(\$start_time, \$rows, \$i, "\$i / \$rows");
+	\$name=\$this->data->detalize('table',\$row[id]);
+	echo "\$i \$row[name]<br>";
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sql.</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
