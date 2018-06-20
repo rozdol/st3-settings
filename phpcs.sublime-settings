@@ -5,7 +5,7 @@
     "phpcs_executable_path": "/usr/local/bin/phpcs",
     "phpcbf_executable_path": "/usr/local/bin/phpcbf",
     "php_cs_fixer_executable_path": "/usr/local/bin/php-cs-fixer",
-    "phpmd_executable_path": "",
+    "phpmd_executable_path": "/usr/local/bin/phpmd",
 
     "extensions_to_execute": ["php", "inc", "include", "module", "install"],
     "extensions_to_blacklist": [],

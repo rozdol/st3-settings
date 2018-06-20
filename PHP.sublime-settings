@@ -2,7 +2,7 @@
 	"extensions":
 	[
 		"Phakefile",
-		"php",
-		"ctp"
+		"ctp",
+		"php"
 	]
 }

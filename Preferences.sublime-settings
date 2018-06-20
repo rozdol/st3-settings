@@ -41,12 +41,16 @@
 		"*.class",
 		"*.psd",
 		"*.db",
-		"*.sublime-workspace"
+		"*.sublime-workspace",
+		"*.lock"
 	],
 	"folder_exclude_patterns":
 	[
+		"_vendor",
+		"_public/assets",
 		"projects/is",
-		"projects/haldivor",
+		"projects/_fastconsent",
+		"projects/_haldivor",
 		"projects/med",
 		"projects/integra",
 		"projects/natamuru",
@@ -57,7 +61,7 @@
 		"projects/recalc",
 		"projects/social",
 		"projects/optimizer",
-		"storage",
+		"_storage",
 		"framework/vendor",
 		".svn",
 		".git",

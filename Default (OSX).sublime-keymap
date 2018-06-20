@@ -18,5 +18,6 @@
     { "keys": ["f6"], "command": "expand_fqcn" },
     { "keys": ["shift+f6"], "command": "expand_fqcn", "args": {"leading_separator": true} },
     { "keys": ["shift+f12"], "command": "goto_definition_scope" },
-    { "keys": ["super+alt+i"], "command": "reindent"} 
+    { "keys": ["super+alt+i"], "command": "reindent" , "args": { "single_line": false } },
+    { "keys": ["super+v"], "command": "paste_and_indent" },
 ]
