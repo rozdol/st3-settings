@@ -46,9 +46,10 @@
 	],
 	"folder_exclude_patterns":
 	[
-		"_vendor",
+		"_webroot",
+		"vendor",
 		"_public/assets",
-		"projects/is",
+		"projects/_is",
 		"projects/_fastconsent",
 		"projects/_haldivor",
 		"projects/med",
