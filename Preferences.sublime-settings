@@ -47,13 +47,13 @@
 	"folder_exclude_patterns":
 	[
 		"_webroot",
-		"vendor",
+		"_vendor",
 		"_public/assets",
 		"projects/_is",
 		"projects/_fastconsent",
 		"projects/_haldivor",
 		"projects/med",
-		"projects/integra",
+		"projects/_integra",
 		"projects/natamuru",
 		"projects/test",
 		"projects/install",
@@ -72,7 +72,7 @@
 		"CVS"
 	],
 	"font_face": "Inconsolata",
-	"font_size": 12,
+	"font_size": 14,
 	"git_binary": "/usr/bin/git",
 	"highlight_line": true,
 	"ignored_packages":
@@ -85,5 +85,5 @@
 	[
 		80
 	],
-	"theme": "predawn-DEV.sublime-theme"
+	"theme": "Seti.sublime-theme"
 }
