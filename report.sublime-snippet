@@ -1,6 +1,5 @@
 <snippet>
 	<content><![CDATA[
-<?php 
 \$tmp=\$this->html->readRQcsv('ids');
 if (\$tmp!=''){\$sql.=" and id in (\$tmp)";}
 
@@ -8,13 +7,13 @@ if (\$tmp!=''){\$sql.=" and id in (\$tmp)";}
 \$fields=array('#','id','name');
 //\$sort= array('id','name');
 
-\$csv_row=['id','name'];
+\$csv_row=\$fields;
 \$csv_arr[]=implode("\t",\$csv_row);
 
 \$out=\$this->html->tag(\$what,'foldered');
-\$out.=\$this->html->tablehead(\$what,\$qry, \$order, \$addbutton, \$fields,'autosort');
+\$out.=\$this->html->tablehead('',\$qry, \$order, \$addbutton, \$fields,'autosort');
 if (!(\$cur = pg_query(\$sql))) {\$this->html->SQL_error(\$sql);}	
-\$rows=pg_num_rows(\$cur);\$start_time=\$this->funcs->get_microtime();
+\$rows=pg_num_rows(\$cur);\$start_time=\$this->utils->get_microtime();
 //if(\$rows>0)\$csv=\$this->data->csv(\$sql);
 while (\$row = pg_fetch_array(\$cur,NULL,PGSQL_ASSOC)){
 	\$i++;
