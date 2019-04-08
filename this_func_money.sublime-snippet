@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\$this->funcs->money(\$${1:row}[${2:price}]);
+\$this->html->money(\$${1:row}[${2:price}]);
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mon.</tabTrigger>

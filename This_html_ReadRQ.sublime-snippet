@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\$${1:var}=\$this->html->readRQ${2}('${3:name}'${4});
+\$${1:var}=\$this->html->readRQ${2}('${1:var}'${4});
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>rq.</tabTrigger>
