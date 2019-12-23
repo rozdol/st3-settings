@@ -2,23 +2,15 @@
 	<content><![CDATA[
 if (\$act=='edit') {
     \$sql="select * from \$what WHERE id=\$id";
-    \$res=\$this->utils->escape(\$this->db->GetRow(\$sql));
+    \$res=\$this->db->GetRow(\$sql);
 } else {
     \$sql="select * from \$what WHERE id=\$refid";
     \$res2=\$this->db->GetRow(\$sql);
     \$res[active]='t';
-    \$res['date']=\$this->dates->F_date('', 1);
-    \$res['duedate']=\$this->dates->F_dateadd(\$res[date], 14);
-    \$GLOBALS[backtodetails]=1;
-}
-if ((\$res[locked]=='t')&&!(\$access['main_admin'])) {
-    \$out.= "<div class='alert alert-error'>Order is locked for editing</div>";
-    exit;
 }
 
 \$form_opt['well_class']="span11 columns form-wrap";
 \$form_opt['title']="Title";
-\$form_opt['url']="?act=save&what=\$what";
 
 \$out.=\$this->html->form_start(\$what, \$id, '', \$form_opt);
 \$out.="<hr>";
@@ -28,17 +20,10 @@ if ((\$res[locked]=='t')&&!(\$access['main_admin'])) {
 \$out.=\$this->html->form_hidden('reference', \$reference);
 \$out.=\$this->html->form_hidden('refid', \$refid);
 
-\$onchange="onchange='itemid=this.value;ajaxFunction(\"accountid_\",\"?csrf=\$GLOBALS[csrf]&act=append&what=bank_accounts&bank_id=\"+itemid);'";
-\$bank=\$this->html->htlist('bank_id', "SELECT id, name from partners where type=204 and active='t' ORDER by name", 0, 'ALL',\$onchange,'','span12');
-\$out.="<label>Bank</label>\$bank<br><span id='accountid_'></span>";
-
-\$currency=\$this->html->htlist('currency_id', "SELECT id, name from listitems where list_id=6 ORDER by id", 0, 'ALL','','','span12');
-\$out.="<label>Currency</label>\$currency";
-
 \$out.=\$this->html->form_text('name', \$res[name], 'Name', '', 0, 'span12');
 
 \$sql="SELECT id, name FROM entities where user_id=\$GLOBALS[uid] and type_id=201 and active='t' ORDER by name";
-\$out.=\$this->html->htlist('from_id', \$sql, \$res[from_id], 'New Company', '', '', 'span12');
+\$out.=\$this->html->htlist('from_id', \$sql, \$res[from_id], 'New Company', '', \$def, \$class);
 
 
 \$from_id=\$this->data->listitems('from_id', \$res[from_id], 'from', 'span12');
