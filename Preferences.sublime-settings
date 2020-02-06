@@ -76,7 +76,7 @@
 		"CVS"
 	],
 	"font_face": "Inconsolata",
-	"font_size": 15,
+	"font_size": 13,
 	"git_binary": "/usr/bin/git",
 	"highlight_line": true,
 	"ignored_packages":
