@@ -2,7 +2,7 @@
 	<content><![CDATA[
 \$sql="SELECT * FROM lists WHERE id>0";
 if (!(\$cur = pg_query(\$sql))) {\$this->html->SQL_error(\$sql);}	
-\$rows=pg_num_rows(\$cur);\$start_time=\$this->funcs->get_microtime();
+\$rows=pg_num_rows(\$cur);\$start_time=\$this->utils->get_microtime();
 while (\$row = pg_fetch_array(\$cur,NULL,PGSQL_ASSOC)){
 	\$i++;
 	\$this->progress(\$start_time, \$rows, \$i, "\$i / \$rows");

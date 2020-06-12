@@ -21,7 +21,8 @@ while (\$row = pg_fetch_array(\$cur,NULL,PGSQL_ASSOC)){
 	\$name=\$this->data->detalize('lists',\$row[id]);
 
 	\$out.= "<tr>";
-	\$out.= "<td>\$i</td><td><span onClick=\"this.className='blackout';basket_additem('\$what:\$row[id]')\">\$row[id]</span></td>"; 
+	\$out.= "<td>\$i</td>";
+	\$out.= "<td id='\$what:\$row[id]' class='cart-selectable' reference='\$what'/>\$row[id]</td>";
 	\$out.= "<td onMouseover=\"showhint('\$row[descr]', this, event, '400px');\">\$row[name]</td>";
 	//\$out.= "<td>\$name</td>";
 	//\$out.= "<td>\$row[id]</td>";
