@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\$this->html->error('${1:error}');
+\$this->html->error("${1:error}");
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>err.</tabTrigger>
